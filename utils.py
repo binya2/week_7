@@ -50,13 +50,13 @@ def add_country_rating_mean(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# 8
+# 7
 def filter_orders(df: pd.DataFrame) -> pd.DataFrame:
-    df.query("total_amount > 1000 and rating > 4.5")
+    df = df.query("total_amount > 1000 and rating > 4.5")
     return df
 
 
-# 9
+# 8
 def add_delivery_status(df: pd.DataFrame) -> pd.DataFrame:
     df = df.assign(delivery_status=lambda x: np.where(x.shipping_days > 7, 'delayed', 'on time'))
     return df

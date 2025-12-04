@@ -10,6 +10,7 @@ from utils import (
     add_delivery_status,
 )
 
+
 def main():
     df = load_orders("orders_simple.json")
     df = clean_types(df)
@@ -22,6 +23,7 @@ def main():
     df = add_delivery_status(df)
     df.to_csv("clean_orders_[209700798].csv", index=False)
     print(df)
+
 
 if __name__ == "__main__":
     main()
